@@ -20,19 +20,21 @@ public class Recipe {
     private Integer servings;
     private String source;
     private String url;
-    private String direction;
 
-    @Enumerated(value = EnumType.STRING)
-    private Difficulty difficulty;
+    @Lob
+    private String directions;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @Lob
     private Byte[] image;
 
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "recipe_category",
@@ -40,14 +42,16 @@ public class Recipe {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
-    public Recipe addIngredient(Ingredient ingredient) {
+    public void setNotes(Notes notes) {
+        if (notes != null) {
+            this.notes = notes;
+            notes.setRecipe(this);
+        }
+    }
+
+    public Recipe addIngredient(Ingredient ingredient){
         ingredient.setRecipe(this);
         this.ingredients.add(ingredient);
         return this;
-    }
-
-    public void setNotes(Notes notes) {
-        this.notes = notes;
-        notes.setRecipe(this);
     }
 }

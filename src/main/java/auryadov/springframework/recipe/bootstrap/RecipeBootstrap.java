@@ -100,7 +100,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setPrepTime(10);
         guacRecipe.setCookTime(0);
         guacRecipe.setDifficulty(Difficulty.EASY);
-        guacRecipe.setDirection("Direction");
+        guacRecipe.setDirections("Direction");
 
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("Notes for recipe");
@@ -116,7 +116,30 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
 
+        // Yummi guac2
+        Recipe guacRecipe1 = new Recipe();
+        guacRecipe1.setDescription("Perfect guacomole 2");
+        guacRecipe1.setPrepTime(10);
+        guacRecipe1.setCookTime(0);
+        guacRecipe1.setDifficulty(Difficulty.EASY);
+        guacRecipe1.setDirections("Direction");
+
+        Notes guacNotes1 = new Notes();
+        guacNotes1.setRecipeNotes("Notes for recipe1");
+
+        guacRecipe1.setNotes(guacNotes);
+
+        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), eachUom));
+        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
+        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
+        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), pinchUom));
+        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), dashUom));
+
+        guacRecipe1.getCategories().add(americanCategory);
+        guacRecipe1.getCategories().add(mexicanCategory);
+
         recipes.add(guacRecipe);
+        recipes.add(guacRecipe1);
 
         return recipes;
     }
