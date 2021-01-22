@@ -107,11 +107,11 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe.setNotes(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
-        guacRecipe.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
-        guacRecipe.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), pinchUom));
-        guacRecipe.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), dashUom));
+        guacRecipe.addIngredient(new Ingredient("avocado", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
+        guacRecipe.addIngredient(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
+        guacRecipe.addIngredient(new Ingredient("avocado", new BigDecimal(2), pinchUom));
+        guacRecipe.addIngredient(new Ingredient("avocado", new BigDecimal(2), dashUom));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
@@ -129,11 +129,11 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe1.setNotes(guacNotes);
 
-        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), eachUom));
-        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
-        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
-        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), pinchUom));
-        guacRecipe1.getIngredients().add(new Ingredient("avocado", new BigDecimal(2), dashUom));
+        guacRecipe1.addIngredient(new Ingredient("avocado", new BigDecimal(2), eachUom));
+        guacRecipe1.addIngredient(new Ingredient("avocado", new BigDecimal(2), eachUom));
+        guacRecipe1.addIngredient(new Ingredient("avocado", new BigDecimal(2), tableSpoon));
+        guacRecipe1.addIngredient(new Ingredient("avocado", new BigDecimal(2), pinchUom));
+        guacRecipe1.addIngredient(new Ingredient("avocado", new BigDecimal(2), dashUom));
 
         guacRecipe1.getCategories().add(americanCategory);
         guacRecipe1.getCategories().add(mexicanCategory);
