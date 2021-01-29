@@ -25,7 +25,7 @@ public class RecipeController {
 
         model.addAttribute("recipe", recipe);
 
-        return "recipe/show";
+        return "recipe/recshow";
     }
 
     @GetMapping("/new")

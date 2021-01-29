@@ -43,7 +43,7 @@ public class IngredientController {
         log.debug("getIngredientById ---" + "ingredientId: " + ingredientId + ", recipeId: " + recipeId);
         model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, ingredientId));
 
-        return "recipe/ingredients/show";
+        return "recipe/ingredients/ingshow";
     }
 
     @GetMapping("{recipeId}/ingredient/{ingredientId}/update")
